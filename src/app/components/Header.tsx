@@ -7,7 +7,7 @@ export default function Header({ className }: { className?: string }) {
     <header
       className={`flex items-center justify-center text-gray-200 text-2xl ${className}`}
     >
-      <Image
+      {/* <Image
         src={PineconeLogo}
         alt="pinecone-logo"
         width="230"
@@ -21,7 +21,8 @@ export default function Header({ className }: { className?: string }) {
         width="160"
         height="50"
         className="mr-3 mt-3"
-      />
+      /> */}
+      Grant Genie 🧞‍♂️
     </header>
   );
 }
