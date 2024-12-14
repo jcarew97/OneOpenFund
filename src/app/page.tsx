@@ -9,12 +9,15 @@ import InstructionModal from "./components/InstructionModal";
 import { AiFillGithub, AiOutlineInfoCircle } from "react-icons/ai";
 import { useAccount, useConnect, useDisconnect } from 'wagmi'
 
+import { type Connector } from 'wagmi';
+
 const Page: React.FC = () => {
   const [gotMessages, setGotMessages] = useState(false);
   const [context, setContext] = useState<string[] | null>(null);
   const [isModalOpen, setModalOpen] = useState(false);
   const account = useAccount()
   const { connectors, connect, status, error } = useConnect()
+  // const { connect, connectors } = useConnect();
   const { disconnect } = useDisconnect()
 
   const { messages, input, handleInputChange, handleSubmit } = useChat({
@@ -74,15 +77,18 @@ const Page: React.FC = () => {
 
       <div>
         <h2>Connect</h2>
-        {connectors.map((connector) => (
-          <button
-            key={connector.uid}
-            onClick={() => connect({ connector })}
-            type="button"
-          >
-            {connector.name}
-          </button>
-        ))}
+        {connectors.map((connector: Connector) => (
+        <button
+          key={connector.uid}
+          onClick={() => connect({ connector })}
+          type="button"
+          className="px-4 py-2 m-2 rounded bg-blue-500 text-white hover:bg-blue-600 disabled:opacity-50"
+          disabled={!connector.ready}
+        >
+          {connector.name}
+          {!connector.ready && ' (unsupported)'}
+        </button>
+      ))}
         <div>{status}</div>
         <div>{error?.message}</div>
       </div>
