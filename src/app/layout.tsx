@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Pinecone - Vercel AI SDK Example",
-  description: "Pinecone - Vercel AI SDK Example",
+  title: "Grant Genie",
+  description: "Grant Genie is a chatbot that helps you find grants.",
 };
 
 import "../global.css";
