@@ -58,6 +58,29 @@ export const Context: React.FC<ContextProps> = ({ className, selected }) => {
         <div className="flex flex-col items-start lg:flex-row w-full lg:flex-wrap p-2">
           {buttons}
         </div>
+        {/* <div className="flex-grow w-full px-4">
+          <form
+            // onSubmit={handleSubmit}
+            className="mt-5 mb-5 relative flex flex-row"
+          >
+            <input
+              type="text"
+              className="input-glow appearance-none border rounded w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline pl-3 pr-10 bg-gray-600 border-gray-600 transition-shadow duration-200 flex-grow"
+            // value={input}
+            // onChange={handleInputChange}
+            />
+            <Button
+              className="w-full my-2 uppercase active:scale-[98%] transition-transform duration-100"
+              style={{
+                backgroundColor: "#4f6574",
+                color: "white",
+              }}
+              onClick={() => clearIndex(setEntries, setCards)}
+            >
+              Add to Sites
+            </Button>
+          </form>
+        </div> */}
         <div className="flex-grow w-full px-4">
           <Button
             className="w-full my-2 uppercase active:scale-[98%] transition-transform duration-100"
@@ -70,8 +93,9 @@ export const Context: React.FC<ContextProps> = ({ className, selected }) => {
             Clear Index
           </Button>
         </div>
+
         <div className="flex p-2"></div>
-        <div className="text-left w-full flex flex-col rounded-b-lg bg-gray-600 p-3 subpixel-antialiased">
+        {/* <div className="text-left w-full flex flex-col rounded-b-lg bg-gray-600 p-3 subpixel-antialiased">
           <DropdownLabel htmlFor="splittingMethod">
             Splitting Method:
           </DropdownLabel>
@@ -116,7 +140,7 @@ export const Context: React.FC<ContextProps> = ({ className, selected }) => {
               </div>
             </div>
           )}
-        </div>
+        </div> */}
       </div>
       {/* <div className="flex flex-wrap w-full">
         {cards &&
